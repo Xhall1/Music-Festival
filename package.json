@@ -1,0 +1,25 @@
+{
+  "name": "music-festival",
+  "version": "1.0.0",
+  "description": "SASS & NPM",
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Gulp"
+  ],
+  "homepage": "https://github.com/Xhall1/Music-Festival#readme",
+  "bugs": {
+    "url": "https://github.com/Xhall1/Music-Festival/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xhall1/Music-Festival.git"
+  },
+  "license": "ISC",
+  "author": "Santiago Torres Morocho @Xhall1",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
