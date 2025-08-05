@@ -1,0 +1,8 @@
+@use 'variable' as v;
+
+body {
+    font-family: v.$principal_font;
+    font-optical-sizing: auto;
+    font-size: normal;
+    color: v.$black;
+}
