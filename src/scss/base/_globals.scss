@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use 'variable' as v;
 
 html {
     font-size: 62.5%;
@@ -11,14 +11,14 @@ html {
     box-sizing: inherit;
 }
 body {
-    font-family: v.$fuente_principal;
+    font-family: v.$principal_font;
     font-optical-sizing: auto;
     font-style: normal;
-    color: v.$negro;
+    color: v.$black;
     font-size: 2rem;
 }
 p {
-    color: v.$negro;
+    color: v.$black;
     line-height: 1.5;
 }
 .container {
