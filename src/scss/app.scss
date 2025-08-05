@@ -1,3 +1,7 @@
+@use 'base/variable' as *;
+
 body {
-    background-color: greenyellow;
+    font-family: $principal_font;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
