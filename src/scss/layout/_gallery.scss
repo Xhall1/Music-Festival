@@ -3,6 +3,7 @@
 
 .gallery {
     @include m.container;
+
     &-images {
         @include m.grid(1, 2rem);
 
@@ -22,5 +23,57 @@
             height: 20rem;
             object-fit: cover;
         }
+    }
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(v.$black, 0.5);
+    display: grid;
+    place-items: center;
+
+    animation: fadeIn ease-in 0.5s;
+
+    &.fade-out {
+        animation: fadeOut ease-in 0.5s;
+    }
+
+    img {
+        max-width: 100rem;
+    }
+}
+
+.btn-close {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: v.$white;
+    border: none;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ANIMATION TO CLOSE AND OPEN THE MODAL */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
