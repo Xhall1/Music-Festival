@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
+    fixedNavegation();
     createGallery();
 })
+
+function fixedNavegation(){
+    const header = document.querySelector('.header');
+    const aboutFestival = document.querySelector('.about-festival');
+
+    document.addEventListener('scroll', function() {
+        if(aboutFestival.getBoundingClientRect().bottom < 1){
+            header.classList.add('fixed');
+            console.log("You've already passed it");
+        } else {
+            header.classList.remove('fixed')
+            console.log("Not yet");
+        }
+    })
+}
 
 function createGallery() {
     const gallery = document.querySelector('.gallery-images');
