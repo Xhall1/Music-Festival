@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     fixedNavegation();
     createGallery();
+    highlightLink();
 })
 
-function fixedNavegation(){
+function fixedNavegation() {
     const header = document.querySelector('.header');
     const aboutFestival = document.querySelector('.about-festival');
 
-    document.addEventListener('scroll', function() {
-        if(aboutFestival.getBoundingClientRect().bottom < 1){
+    document.addEventListener('scroll', function () {
+        if (aboutFestival.getBoundingClientRect().bottom < 1) {
             header.classList.add('fixed');
             console.log("You've already passed it");
         } else {
@@ -53,7 +54,7 @@ function showImage(i) {
     closeModalBtn.textContent = 'X';
     closeModalBtn.classList.add('btn-close');
     closeModalBtn.onclick = closeModal;
-    
+
     modal.appendChild(image);
     modal.appendChild(closeModalBtn);
 
@@ -73,4 +74,30 @@ function closeModal() {
         body.classList.remove('overflow-hidden');
     }, 500);
 
+}
+
+function highlightLink() {
+    document.addEventListener('scroll', function () {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.principal-navegation a');
+
+
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
+                current = section.id
+            }
+        })
+
+        navLinks.forEach(link => {
+            
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active')
+            } else {
+                link.classList.remove('active')
+            }
+        })
+    })
 }
