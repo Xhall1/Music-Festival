@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fixedNavegation();
     createGallery();
     highlightLink();
+    scrollNav();
 })
 
 function fixedNavegation() {
@@ -98,6 +99,20 @@ function highlightLink() {
             } else {
                 link.classList.remove('active')
             }
+        })
+    })
+}
+
+function scrollNav() {
+    const navLinks = document.querySelectorAll('.principal-navegation a');
+
+    navLinks.forEach( link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const sectionScroll = e.target.getAttribute('href');
+            const section = document.querySelector(sectionScroll);
+            
+            section.scrollIntoView({behavior: 'smooth'})
         })
     })
 }
